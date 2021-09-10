@@ -4,6 +4,7 @@ const admin = require('firebase-admin');
 const firebaseKeys = require('./firebaseKeys.json');
 
 const moviesRoute = require('./routes/movies');
+const categoriesRoute = require('./routes/categories');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/movies', moviesRoute);
+app.use('/categories', categoriesRoute);
 
 // Listen requests
 app.listen(process.env.PORT || 5000, () => {

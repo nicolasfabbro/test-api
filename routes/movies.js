@@ -42,7 +42,7 @@ app.get('/', async (req, res) => {
       });
     });
   
-    res.send(movies);
+    res.send({ movies });
   } catch (e) {
     res.status(500).send({ status: 'error', error: 'error_getting_movies' });
   }
